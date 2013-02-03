@@ -57,7 +57,6 @@
 		<s:Label id="colCorAnsw" x="85" y="217" width="47" color="#15DC27" fontWeight="bold"
 				 textAlign="center" verticalAlign="middle"/>
 	</s:Panel>
-	<s:Button x="48" y="55" label="enter"/>
 	
 	
 	

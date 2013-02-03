@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   width="453" height="337">
+	<fx:Style source="kinderTest.css"/>	
+	
+	
+	
+	
+	<fx:Script source="kinder.as"/>
+	
+		
+	
+	<s:Button id="settingButton" x="143" y="55" label="настройки" click="setting_clickHandler(event)"/>
+	<s:Button id="testButton" x="265" y="55" label="тест" click="test_clickHandler(event)"
+			  tabIndex="1" toolTip="нажать для начала"/>
+	<s:Panel id="formTesting" visible="true" x="117" y="104" width="241" height="135" enabled="false"
+			 title="тестирование">
+		<s:HGroup y="10" width="200" height="30" horizontalCenter="-1" textAlign="center">
+			<s:Label id="LabelQuest" width="133" height="27" textAlign="right" verticalAlign="middle"/>
+			<s:TextInput id="answerText" width="59" height="27"
+						 enter="answerText_enterHandler(event)" />
+		</s:HGroup>
+		<s:Button id="answerButton" x="159" y="60" label="ответить"
+				  click="answerButton_clickHandler(event)"/>	
+		<s:Label id="colorAnsver" x="29" y="60" width="30" height="30" color="#FFFFFF"/>
+	</s:Panel>
+	<s:Panel id="settingBox" visible="false" x="104" y="95" width="262" height="172" title="настройки">
+				<s:Button id="okSettimgs" x="84" y="118" label="ок" click="okSettimgs_clickHandler(event)"/>
+				<mx:ComboBox id="modeTesting" x="10" y="10" change="modeTesting_changeHandler(event)"
+							 dataProvider="{['тест на время','время на один вопрос','тест на количество вопросов']}"
+							 selectedIndex="1" toolTip="режим тестирования"/>
+				<s:NumericStepper id="colQuestTesting" x="174" y="44" maximum="50" minimum="0"/>
+				<s:NumericStepper id="secTesting" x="71" y="44" maximum="60" minimum="0"/>
+				<s:NumericStepper id="minTesting" x="10" y="44" maximum="20" minimum="0"/>
+				<s:Label x="10" y="75" text="минуты"/>
+				<s:Label x="72" y="75" text="секунды"/>
+				<s:Label x="174" y="75" width="74" height="29" text="количество вопросов"/>
+		<s:CheckBox id="checkAnsv" x="10" y="88" width="177" height="27"
+					label="правильность текущего ответа" fontSize="10" selected="true"/>
+
+</s:Panel>
+	<s:Panel id="formreport" x="10" y="13" width="307" height="272" visible="false">
+		<mx:DataGrid id="dataGrid" x="0" y="0">
+			<mx:columns>
+				<mx:DataGridColumn dataField="exemple" />
+				<mx:DataGridColumn dataField="answer" />
+				<mx:DataGridColumn dataField="correct"/>
+			</mx:columns>
+		</mx:DataGrid>
+		<s:Button id="okReport" x="212" y="217" label="ок" click="okReport_clickHandler(event)"/>
+		<s:Label x="10" y="185" width="69" height="29" text="всего вопросов"/>
+		<s:Label x="81" y="185" width="76" height="29" text="правильных ответов"/>
+		<s:Label id="colQuest" x="8" y="217" width="47" color="#1154AE" textAlign="center"
+				 verticalAlign="middle"/>
+		<s:Label id="colCorAnsw" x="85" y="217" width="47" color="#15DC27" fontWeight="bold"
+				 textAlign="center" verticalAlign="middle"/>
+	</s:Panel>
+	<s:Button x="48" y="55" label="enter"/>
+	
+	
+	
+</s:WindowedApplication>

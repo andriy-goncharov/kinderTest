@@ -239,4 +239,8 @@ private function paintRect(color:Boolean):void
 	}
 		
 }
+protected function button1_clickHandler(event:MouseEvent):void
+{
+	Alert.show('test');	
+}
 
